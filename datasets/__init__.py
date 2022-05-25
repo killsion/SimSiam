@@ -3,7 +3,7 @@ import torchvision
 from .random_dataset import RandomDataset
 
 
-def get_dataset(dataset, data_dir, transform, train=True, download=False, debug_subset_size=None):
+def get_dataset(dataset, data_dir, transform, train=True, download=True, debug_subset_size=None):
     if dataset == 'mnist':
         dataset = torchvision.datasets.MNIST(data_dir, train=train, transform=transform, download=download)
     elif dataset == 'stl10':

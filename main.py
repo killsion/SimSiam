@@ -108,6 +108,7 @@ def main(device, args):
 
 if __name__ == "__main__":
     args = get_args()
+    print(args)
 
     main(device=args.device, args=args)
 
