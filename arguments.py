@@ -41,6 +41,7 @@ def set_deterministic(seed):
         torch.backends.cudnn.benchmark = False 
 
 def get_args():
+
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--config-file',required=True, type=str, help="xxx.yaml")
     parser.add_argument('--debug',action='store_true')
