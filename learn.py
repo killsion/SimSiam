@@ -14,9 +14,8 @@ from optimizers import get_optimizer, LR_Scheduler
 from linear_eval import main as linear_eval
 from datetime import datetime
 args = get_args()
-print(args)
 dataset = get_dataset(
-    transform=get_aug(train=True, **args.aug_kwargs),
+    transform=get_aug(train=False,train_classifier=False, **args.aug_kwargs),
     train=True,
     **args.dataset_kwargs)
 

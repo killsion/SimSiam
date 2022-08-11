@@ -85,7 +85,8 @@ def main(device, args):
             logger.update_scalers(data_dict)
 
         if args.train.knn_monitor and epoch % args.train.knn_interval == 0: 
-            accuracy = knn_monitor(model.module.backbone, memory_loader, test_loader, device, k=min(args.train.knn_k, len(memory_loader.dataset)), hide_progress=args.hide_progress) 
+            accuracy = knn_monitor(model.module.backbone, memory_loader, test_loader, device, k=min(args.train.knn_k, len(memory_loader.dataset)), hide_progress=args.hide_progress)
+            print(epoch,":",accuracy)
         
         epoch_dict = {"epoch":epoch, "accuracy":accuracy}
         global_progress.set_postfix(epoch_dict)
