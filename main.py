@@ -45,8 +45,12 @@ def main(device, args):
     )
 
     # define model
-    model = get_model(args.model).to(device)
-    model = torch.nn.DataParallel(model)
+    # model = get_model(args.model).to(device)
+    # model = torch.nn.DataParallel(model)
+
+    model = get_model(args.model).cuda()
+    device_ids=[0,1]
+    model = torch.nn.DataParallel(model,device_ids=device_ids)
 
     # define optimizer
     optimizer = get_optimizer(

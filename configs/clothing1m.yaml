@@ -3,6 +3,7 @@ dataset:
   name: clothing1m
   image_size: 224
   num_workers: 4
+  data_dir: 'E:/BigDataset/clothing1m/'
 
 model:
   name: simsiam
